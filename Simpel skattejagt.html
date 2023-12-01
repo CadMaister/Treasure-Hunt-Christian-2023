@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skattejagt</title>
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Velkommen til Skattejagten!</h1>
+    <p>Dette er en spændende skattejagt, hvor du skal svare på 10 spørgsmål. Hvert spørgsmål vil blive vist, når du har svaret korrekt på det foregående spørgsmål. Lad os begynde!</p>
+
+    <div id="question1">
+        <p>Spørgsmål 1: Hvad er hovedstaden i Danmark?</p>
+        <input type="text" id="answer1" oninput="checkAnswer(1, 'københavn')">
+    </div>
+
+    <div id="question2" class="hidden">
+        <p>Spørgsmål 2: Hvad er hovedstaden i Sverige?</p>
+        <input type="text" id="answer2" oninput="checkAnswer(2, 'stockholm')">
+    </div>
+
+    <!-- Tilføj flere spørgsmål her -->
+
+    <script>
+        function checkAnswer(questionNumber, correctAnswer) {
+            var answer = document.getElementById('answer' + questionNumber).value;
+            if (answer.toLowerCase() === correctAnswer) {
+                document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
